@@ -11,10 +11,6 @@ git clone --depth=1 http://github.com/xitoid/nezuko
 # Perhatian
 Jika ini adalah pertama kalinya kamu clone repo ini, saya sarankan untuk melihat repo demo terlebih dulu [di sini](https://github.com/xitoid/demo-nezuko)
 
-```shell
-php nezuko.php
-```
-
 <!-- Kurang lebih, tampilannya akan seperti di bawah ini:
 
 ![php_nezuko](https://user-images.githubusercontent.com/71378837/137420296-745eeb07-3351-4856-8db9-cb23166561be.png) -->
