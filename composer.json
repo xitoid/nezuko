@@ -2,7 +2,7 @@
     "name": "xitoid/nezuko",
     "description": "Nezuko adalah library untuk menggenerate kata otomatis",
     "type": "library",
-    "license": "GPL-3.0",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Xitoid\\Nezuko\\": "src/"
