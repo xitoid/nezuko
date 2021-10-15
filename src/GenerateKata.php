@@ -1,7 +1,7 @@
 <?php
 namespace Xitoid\Nezuko\GenerateKata;
 
-class Generate
+class GenerateKata
 {
     private $listKarakter;
     
