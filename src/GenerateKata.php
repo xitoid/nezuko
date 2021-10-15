@@ -1,5 +1,5 @@
 <?php
-namespace Xitoid\Nezuko\GenerateKata;
+namespace Nezuko;
 
 class GenerateKata
 {
