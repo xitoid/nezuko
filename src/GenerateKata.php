@@ -4,10 +4,25 @@ namespace Nezuko;
 class GenerateKata
 {
     private $listKarakter;
+    private $arrayKarakter;
     
     public function __construct()
     {
-        $this -> listKarakter = range('a', 'z');
+        $this -> listKarakter  = range('a', 'z');
+        $this -> arrayKarakter = array(1);
+    }
+    
+    public function tambahArray($array)
+    {
+        if(!is_array($array))
+        {
+            return false;
+        }
+        $this -> arrayKarakter = array_merge(
+            $this -> arrayKarakter,
+            $array
+            );
+        return true;
     }
     
     public function tambahList($list)
@@ -24,26 +39,26 @@ class GenerateKata
         return true;
     }
     
-    public function lihatList()
+    public function tambahItemAkhir()
     {
-        return $this -> listKarakter;
-    }
-    
-    public function jumlahList()
-    {
-        return count(self::lihatList());
-    }
-    
-    public function lihatKata($array)
-    {
-        $kata = "";
+        $itemTerakhir = count($this -> arrayKarakter)-1;
+        $this -> arrayKarakter[$itemTerakhir]++;
         
-        for($i = 0; $i < count($array); $i++)
+        $panjangList = $this -> jumlahList();
+        for($i = count($this -> arrayKarakter) - 1; $i > -1; $i-- )
         {
-            $kata .= self::lihatKarakter($array[$i]);
+            if($this -> arrayKarakter[$i] > $panjangList)
+            {
+                if(array_key_exists($i - 1, $this -> arrayKarakter))
+                {
+                    $this -> arrayKarakter[$i - 1]++;
+                    $this -> arrayKarakter[$i] = 1;
+                } else {
+                    $this -> arrayKarakter = $this -> tambahResetItem($this -> arrayKarakter);
+                    //$tambahMatrik = true;
+                }
+            }
         }
-        
-        return $kata;
     }
     
     public function tambahResetItem($array)
@@ -51,9 +66,32 @@ class GenerateKata
         return array_fill(0, (count($array) + 1), 1);
     }
     
+    public function jumlahList()
+    {
+        return count($this-> lihatList());
+    }
+    
+    public function lihatList()
+    {
+        return $this -> listKarakter;
+    }
+    
+    public function lihatKata()
+    {
+        $array = $this -> arrayKarakter;
+        $kata = "";
+        
+        for($i = 0; $i < count($array); $i++)
+        {
+            $kata .= $this -> lihatKarakter($array[$i]);
+        }
+        
+        return $kata;
+    }
+    
     private function lihatKarakter($pos)
     {
-        $list   = self::lihatList();
+        $list   = $this -> lihatList();
         $posisi = $pos - 1;
         
         if($posisi < count($list))
