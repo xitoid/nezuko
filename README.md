@@ -1,7 +1,7 @@
 # nezuko
-Nezuko adalah class generator kata.
+Nezuko adalah library untuk menggenerate kata.
 
-> Repository ini akan memiliki banyak perubahan dan size repo juga akan semakin besar. Jika kamu hanya ingin menggunakan classnya (tidak mengubah isi class nezuko), ada baiknya kamu menggunakan metode _shalow clone_ daripada clone repo standar.
+> Repository ini akan memiliki banyak perubahan dan size repo juga akan semakin besar. Jika kamu ingin clone, ada baiknya kamu menggunakan metode _shalow clone_ daripada clone repo standar.
 
 ```shell
 git clone --depth=1 http://github.com/xitoid/nezuko
